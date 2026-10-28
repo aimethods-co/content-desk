@@ -1,0 +1,12 @@
+node_modules/
+brag-output*/
+.env
+.env.*
+# ad-chat exports carry phone numbers: keep them local only
+results/ad-chats-*
+results/comments-*
+content/*/work/
+results/*.log
+admin/vault.js
+admin/config.js
+!.env.example

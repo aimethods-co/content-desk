@@ -1,0 +1,9 @@
+{
+  "name": "Your Brand",
+  "timezone": "Asia/Kolkata",
+  "utc_offset": "+05:30",
+  "locale": "en-IN",
+  "repo": "your-github-user/your-content-repo",
+  "branch": "main",
+  "desk_pages_repo": "your-github-user/your-desk"
+}
