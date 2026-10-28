@@ -1,6 +1,6 @@
 ---
 name: setup
-description: First-run onboarding. Turns this repo into one brand's content desk - fills the brand, compliance, calendar and replies skills, brand.css, desk.config.json and .agents/product-marketing.md from the brand's website, then connects Instagram/Facebook, GitHub Actions and the phone desk app. Use when the user says "setup", "set this up", "onboard my brand", or when the brand skill still contains FILL.
+description: First-run onboarding. The repo ships as AI Methods' own desk; this replaces AI Methods with the user's brand - the brand, compliance, calendar and replies skills, brand.css, the logo, desk.config.json and .agents/product-marketing.md, all from the brand's website - then connects Instagram/Facebook, GitHub Actions and the phone desk app. Use when the user says "setup", "set this up", "onboard my brand", or when desk.config.json says AI Methods in a repo that isn't aimethods-co/content-desk.
 ---
 
 # Setup
@@ -8,6 +8,14 @@ description: First-run onboarding. Turns this repo into one brand's content desk
 Goal: a working desk with as few questions as possible. **Work out everything
 you can from the website before asking anything.** Every question you ask is
 one the owner might not answer.
+
+## 0. Clear AI Methods out
+
+The repo ships as AI Methods' live desk. Delete `content/*` (AI Methods'
+posts), empty `results/formats.md` below its header, and clear Learnings in
+`.agents/product-marketing.md`. Everything else gets rewritten in step 2:
+every section of `brand`, `calendar`, `replies` and `compliance` 1.8 that
+mentions AI Methods.
 
 ## 1. Ask for one thing
 
@@ -37,7 +45,8 @@ Read the home page, pricing, about, FAQ and terms (WebFetch). Then:
   that matter in that market and industry (look each one up, cite it).
 - **Replies:** write who we're reaching and where an interested commenter goes.
 
-Replace every FILL. `grep -rn FILL .claude/skills .agents` must come back empty.
+Check: `grep -rln "AI Methods\|aimethods" .claude/skills .agents brand desk.config.json templates`
+comes back empty.
 
 ## 3. Show, then ask only what you couldn't derive
 
@@ -72,11 +81,13 @@ Walk the owner through each step and check it worked before moving on.
    `.env`. Run `node scripts/deploy-admin.mjs`, then turn on Pages for that repo
    (main branch, root). Check: the page opens and unlocks.
 4. **Schedules:** the cron times in `.github/workflows/desk.yml` are UTC.
-   Convert them for the owner's timezone.
+   Convert them for the owner's timezone. Scheduled runs stay off until the
+   repo variable `DESK_ENABLED` is `true` (Settings > Secrets and variables >
+   Actions > Variables). Set it last, once steps 1-3 pass.
 
 ## 5. First week
 
-Delete `content/_example`. Run the weekly desk by hand (Actions > desk >
+Run the weekly desk by hand (Actions > desk >
 Run workflow > weekly), or say "plan and make next week" here. Tell the owner
 where to look: the desk app, `QUEUE.md`, and `FEEDBACK.md` for anything they
 want changed.

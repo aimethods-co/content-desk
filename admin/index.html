@@ -375,7 +375,7 @@ function renderDesk() {
   $("#main").innerHTML = `
     <div class="panel">
       <span class="label">Tell the desk</span>
-      <div class="chips">${["More memes this week", "Fewer text posts", "Try a new reel style", "Slow down: fewer posts", "Focus on GST this week"].map((c) => `<button data-chip="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+      <div class="chips">${["More memes this week", "Fewer text posts", "Try a new reel style", "Slow down: fewer posts", "More light designs"].map((c) => `<button data-chip="${esc(c)}">${esc(c)}</button>`).join("")}</div>
       <textarea class="input" id="fbText" placeholder="Anything: what to change, try or avoid. The desk acts on it first."></textarea>
       <div class="actions" style="margin-top:10px"><button class="btn primary" id="fbSend">Send</button><button class="btn mint" id="fbRun">Send &amp; act now</button></div>
       ${open.length ? `<div class="note" style="margin-top:14px">Waiting for the desk (${open.length}):</div><div class="md" style="margin-top:6px">${esc(open.join("\n"))}</div>` : ""}

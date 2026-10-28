@@ -54,17 +54,25 @@ After making something, add its row there:
 
 ## Topics
 
-FILL (the `setup` skill writes 4-6 content pillars from
-`.agents/product-marketing.md`: what the product does for the reader, the
-reader's world, practical tips, light humour about the work, occasions).
+<!-- AI Methods' pillars. The `setup` skill rewrites these for a new brand. -->
+- **Content Desk:** how it works, what it made this week, how to set it up.
+- **Our products:** RouteAI, BizAgent, QuickCA, Cue. One clear use each.
+- **AI for real work:** small, practical ways a business can use agents and
+  automations. No hype.
+- **Build in public:** what we shipped, what broke, what we learned.
+- **Builder humour:** light jokes about prompts, deploys and Mondays.
 
-Never: FILL (topics the owner rules out).
+Never: politics, AI doom or AI hype, attacks on other AI companies, client
+names or results.
 
 ## Dates that matter
 
 | Date | Occasion | Plan | Source |
 |---|---|---|---|
-| FILL | | | |
+| 6 Nov 2026 (Fri) | Dhanteras | story | Drik Panchang via hindutone.com |
+| 8 Nov 2026 (Sun) | Diwali | greeting post + story | Drik Panchang via hindutone.com |
+| 25 Dec 2026 | Christmas | story | fixed |
+| 1 Jan 2027 | New Year | feed post: what we shipped in 2026 | fixed |
 
 Festivals and holidays in the owner's market, industry days, deadlines the
 audience works to. **Look each date up before adding it** and note the

@@ -1,0 +1,18 @@
+{
+  "platforms": [
+    "instagram",
+    "facebook"
+  ],
+  "media": [
+    "png/slide-01.png",
+    "png/slide-02.png",
+    "png/slide-03.png",
+    "png/slide-04.png",
+    "png/slide-05.png",
+    "png/slide-06.png"
+  ],
+  "caption": "Your social media team fits in one repo.\n\nContent Desk plans the week, makes the reels, posts and stories, checks each one, and posts on time.\n\nFree and open source. Start with one command: /setup\n\nLink in bio.\n\n#AIMethods #ClaudeCode #OpenSource #SocialMediaMarketing #ContentCreation #GitHub",
+  "facebook_caption": "Your social media team fits in one repo.\n\nContent Desk plans the week, makes the reels, posts and stories, checks each one, and posts on time.\n\nFree and open source: https://github.com/aimethods-co/content-desk\n\n#AIMethods #ClaudeCode #OpenSource #SocialMediaMarketing #ContentCreation #GitHub",
+  "publish_at": "2026-11-02T13:00:00+05:30",
+  "expires_at": "2026-11-02T23:59:00+05:30"
+}

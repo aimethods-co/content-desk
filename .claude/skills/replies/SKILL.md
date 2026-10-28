@@ -10,8 +10,13 @@ or comments the user pastes. Skip anything marked "(answered)".
 
 ## The job of a reply
 
-FILL (the `setup` skill writes who we're trying to reach and where an
-interested commenter should go, for example "link in bio").
+<!-- AI Methods'. The `setup` skill rewrites this for a new brand. -->
+- **Someone who wants to use Content Desk:** point them to the link in bio
+  (the GitHub repo). For help setting it up: quickca@thequickca.com.
+- **A business asking about AI work or our other products:** answer from the
+  `brand` skill's claims, then "link in bio" or the email above.
+- **A developer with a bug or idea:** thank them, ask them to open a GitHub
+  issue (link in bio).
 
 ## Rules
 

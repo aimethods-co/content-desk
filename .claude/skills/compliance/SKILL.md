@@ -12,8 +12,9 @@ and a rewrite. If nothing fails, say so. Don't soften a fail into a
 
 ## 0. Setup
 
-If the `brand` skill still has FILL in its approved claims, the verdict is
-FIX NEEDED: "Run the setup skill first." Nothing ships on unfilled claims.
+If `desk.config.json` says "AI Methods" but this repo isn't
+`aimethods-co/content-desk` (check `git remote -v`), the verdict is FIX NEEDED:
+"Run the setup skill first." A copy never posts on AI Methods' brand.
 
 ## 1. The brand's own rules
 
@@ -30,8 +31,10 @@ FIX NEEDED: "Run the setup skill first." Nothing ships on unfilled claims.
 6. **No exaggerated or disparaging claims:** "the best", "#1", "cheaper than X",
    attacks on a competitor.
 7. **Logo and colours** follow the `brand` skill. Fail a recoloured or redrawn logo.
-8. Brand-specific rules: FILL (the `setup` skill adds anything the owner's
-   industry needs, for example health, finance or legal claims).
+8. Brand-specific rules (AI Methods; `setup` rewrites these): never name a
+   client or show client work; never claim what an AI model can do beyond
+   what our product does; QuickCA posts follow QuickCA's own rules (no tax
+   figures, no CA names).
 
 ## 2. Platform rules (Meta: Facebook, Instagram)
 

@@ -1,6 +1,0 @@
-{
-  "platforms": ["instagram", "facebook"],
-  "media": ["png/slide-01.png", "png/slide-02.png", "png/slide-03.png"],
-  "caption": "The hook again, in plain words.\n\nTwo or three short lines on the one point.\n\nLink in bio.\n\n#YourTopic #YourIndustry",
-  "facebook_caption": "Optional: a Facebook version, where links work: https://example.com"
-}

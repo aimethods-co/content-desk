@@ -29,6 +29,8 @@ permissions:
 
 jobs:
   desk:
+    # Scheduled runs stay off until the repo variable DESK_ENABLED is "true".
+    if: vars.DESK_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:

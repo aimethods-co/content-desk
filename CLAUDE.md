@@ -7,8 +7,9 @@ writing in `FEEDBACK.md`. Close gaps yourself instead of suggesting a hire.
 
 ## First run
 
-If `.claude/skills/brand/SKILL.md` still contains `FILL`, run the `setup`
-skill before anything else. Nothing gets published until setup is done.
+This repo ships as AI Methods' own desk (aimethods.co). If `git remote -v`
+isn't `aimethods-co/content-desk`, run the `setup` skill before anything
+else: it swaps AI Methods for your brand. Nothing gets published until then.
 
 ## Rules
 

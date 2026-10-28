@@ -1,141 +1,171 @@
-# Content Desk
+<p align="center">
+  <img src="docs/media/logo.png" width="88" alt="AI Methods">
+</p>
 
-**An AI social media team that lives in a GitHub repo.** It plans a week of
-Instagram and Facebook content, makes the reels, carousels and stories,
-checks every piece against your brand rules, posts on schedule and answers
-comments. You review from your phone.
+<h1 align="center">Content Desk</h1>
 
-Built on [Claude Code](https://claude.com/claude-code). Made by
-[AI Methods](https://aimethods.co).
+<p align="center"><b>Your social media team. In one repo.</b></p>
 
-```
-Sunday             every evening              every half hour
-  |                     |                           |
-  v                     v                           v
-plan the week  ->  make tomorrow's pieces  ->  post what's due
-(calendar skill)   (reel, post, story)        (queue workflow)
-                   check each one              update QUEUE.md
-                   (compliance skill)
-                        ^
-                        |
-          you: desk app on your phone, or FEEDBACK.md
-          "change this", "remake that", "more like this reel"
-```
+<p align="center">
+  📮 Need help to set it up? Mail us: <a href="mailto:quickca@thequickca.com"><b>quickca@thequickca.com</b></a>
+</p>
 
-## What you get
+<p align="center">
+  <img src="docs/media/reel.gif" height="420" alt="A reel it made">
+  &nbsp;
+  <img src="docs/media/carousel.gif" height="420" alt="A carousel it made">
+  &nbsp;
+  <img src="docs/media/desk.gif" height="420" alt="The desk app on a phone">
+</p>
 
-- **Reels with motion, music and voiceover.** HTML compositions rendered
-  frame by frame, an original music bed (`score.py`) and a local text-to-speech
-  voiceover (`voice.py`, Kokoro). No stock footage, and no licensed audio to
-  worry about.
-- **Carousels, single images, stories and memes,** rendered from HTML in your
-  brand's colours and type.
-- **A compliance gate.** Nothing posts without a `VERDICT: PASS` from the
-  `compliance` skill: approved claims only, no invented numbers, platform ad
-  rules, your banned words.
-- **"Never get comfortable".** The desk logs every format it uses and won't
-  repeat a hook, structure or motion style from the last four pieces.
-- **A phone app** (a static page on GitHub Pages) to preview, edit, hold,
-  post now, remake or drop any piece, and to send references ("make one like
-  this reel").
-- **Comment replies** for routine questions. Complaints, spam and anything
-  about money get flagged for you instead.
-- **29 skills** for hooks, scripts, carousels, captions, analytics and
-  research. Open-source skills are credited in `third_party/`.
+<p align="center"><sub>A reel, a carousel and the phone app. All made by this repo, for AI Methods.</sub></p>
 
-## Quick start
+---
 
-You need: [Claude Code](https://claude.com/claude-code), Node 20+,
-Python 3.12, Chrome, an Instagram professional account linked to a Facebook
-Page, and a GitHub account.
+## What it is
 
-```bash
-# 1. Make your own copy: "Use this template" on GitHub, or
-git clone https://github.com/aimethods-co/content-desk my-content && cd my-content
+- An AI team for Instagram and Facebook.
+- It plans your posts.
+- It makes them: reels, posts, stories, memes.
+- It checks each one.
+- It posts them on time.
+- It answers simple comments.
+- You check it all from your phone.
+- It runs on [Claude Code](https://claude.com/claude-code) and GitHub.
+- It is free. It is open source (MIT).
+- We use it for our own posts at [AI Methods](https://aimethods.co).
 
-# 2. Install the tools
-npm install
-pip install numpy==1.26.4 kokoro==0.9.4 soundfile==0.13.1   # voiceover; also install espeak-ng
+## What it makes
 
-# 3. Open Claude Code here and onboard your brand
-claude
-> /setup
-```
+<p align="center"><img src="docs/media/content.png" alt="Posts it made for AI Methods"></p>
 
-`/setup` asks for your website and works the rest out from it: your pitch,
-audience, approved claims, colours, logo and timezone. It shows you what it
-found, asks only what it couldn't work out, then walks you through connecting
-Meta, GitHub Actions and the phone app, checking each step.
+- Reels with motion and music.
+- Posts with many slides.
+- Stories.
+- Memes.
+- All in your colours, with your logo.
+- No stock photos. No songs you don't own.
+- See them all in [`content/`](content/).
 
-After that you can leave it running. Say "plan and make next week" any time
-to run the desk by hand.
+## The phone app
+
+<p align="center"><img src="docs/media/desk-screens.png" alt="The desk app: reels, posts, one post, the desk"></p>
+
+- See what goes out, and when.
+- Swipe through each post.
+- Change the words or the time.
+- Hold it. Post it now. Or drop it.
+- Tap "Change it" or "Don't like it". The desk fixes it.
+- Send a reel you like. It learns the style.
+- It is one web page. It is locked with your password.
+
+## Start in 5 steps
+
+1. Get the code.
+   - Click **Use this template** at the top of this page.
+   - Or run: `git clone https://github.com/aimethods-co/content-desk`
+2. Add the tools.
+   - `npm install`
+   - For a voice on reels: `pip install numpy==1.26.4 kokoro==0.9.4 soundfile==0.13.1` (and espeak-ng)
+3. Open Claude Code in the folder.
+   - `claude`
+4. Type `/setup`.
+   - It asks for your website. That is all it needs to start.
+   - It finds your name, logo, colours and what you sell.
+   - It shows you what it found. You fix what is wrong.
+   - It walks you through each link: Meta, GitHub, the phone app.
+5. Turn it on.
+   - Set the repo variable `DESK_ENABLED` to `true`.
+   - That's it. It runs by itself now.
+
+**Stuck? Mail us: [quickca@thequickca.com](mailto:quickca@thequickca.com)**
+
+## What you need
+
+- [Claude Code](https://claude.com/claude-code) and a Claude plan.
+- Node 20+, Python 3.12 and Chrome.
+- An Instagram pro account, linked to a Facebook Page.
+- A GitHub account.
 
 ## How it runs
 
-| Workflow | When | What it does |
-|---|---|---|
-| `queue` | every half hour | posts whatever is due, retries failures 3 times, rewrites `QUEUE.md` |
-| `desk` (weekly) | Sunday | plans 7 days into `results/plan.md`, makes the first two |
-| `desk` (daily) | every evening | handles your feedback, makes tomorrow, replies to comments |
+| When | What it does |
+|---|---|
+| Sunday | Plans the next 7 days. Makes the first 2. |
+| Each evening | Reads your notes. Makes the next day. Answers comments. |
+| Each half hour | Posts what is due. |
 
-The desk runs Claude Code in GitHub Actions on your Claude subscription
-(`CLAUDE_CODE_OAUTH_TOKEN`). Cron times in `.github/workflows/` are UTC:
-setup converts them. GitHub can delay scheduled runs. If exact times matter,
-call each workflow's `workflow_dispatch` from an external scheduler (Google
-Cloud Scheduler, cron-job.org) instead.
+- Each day gets at least 1 reel, 1 post and 1 story.
+- No two reels in a row look the same.
+- It tries one new thing each week.
+- It all runs in GitHub Actions. Your PC can be off.
 
-**Actions minutes:** public repos run free. On a private repo the half-hourly
-queue and the daily desk add up, so check your GitHub plan's included minutes
-or trim the queue's cron to the slots you actually post in.
+## How you talk to it
 
-## Where things live
+- Tap a button in the phone app.
+- Or write in [`FEEDBACK.md`](FEEDBACK.md).
+- Or just ask Claude: "plan next week", "make a reel about X".
+- Problems show up in [`ISSUES.md`](ISSUES.md).
+- What is coming up is in [`QUEUE.md`](QUEUE.md).
 
-```
-desk.config.json        brand name, timezone, repo names
-.agents/product-marketing.md   who we are, who we post for, what worked (read first)
-.claude/skills/         brand, compliance, calendar, replies, setup + 24 more
-brand/                  brand.css (tokens) and logo/
-templates/              starting points (carousel, saved reel styles)
-content/YYYY-MM-DD-slug/  one folder per piece: post.json, compliance.md, media
-scripts/                render, publish, queue, comments, music, voice, mix
-scripts/desk/           the prompts the scheduled desk runs
-admin/                  the phone desk app (single HTML file)
-QUEUE.md                what's coming up and what went out
-FEEDBACK.md             write here; the desk acts on it and moves it to Done
-ISSUES.md               what needs you: failed posts, flagged comments
-```
+## Rules it keeps
 
-A piece is a folder with `post.json`:
+- No post goes out without a **PASS** from the check.
+- It only says what your site says. No made-up numbers.
+- No fake reviews.
+- It uses your logo as it is.
+- It never spends money.
+- It never DMs anyone first.
+- Hard comments come to you. It does not reply to them.
+
+## Where things are
+
+| Path | What is in it |
+|---|---|
+| `desk.config.json` | Your name, time zone, repo |
+| `.agents/product-marketing.md` | Who you sell to. What worked. |
+| `.claude/skills/` | 29 skills. The 5 core ones: `setup`, `brand`, `compliance`, `calendar`, `replies` |
+| `brand/` | Your colours (`brand.css`) and logo |
+| `content/` | One folder per post |
+| `scripts/` | Make, post, queue, music, voice |
+| `admin/` | The phone app |
+
+## One post = one folder
+
+- `post.json`: what to post, and when.
+- `compliance.md`: the check. Line one must say `VERDICT: PASS`.
+- The images or the video.
 
 ```json
 {
   "platforms": ["instagram", "facebook"],
   "media": ["png/slide-01.png", "png/slide-02.png"],
-  "caption": "...",
-  "format": "story",
-  "publish_at": "2026-11-08T13:00:00+05:30",
-  "expires_at": "2026-11-08T23:59:00+05:30"
+  "caption": "Your words here.",
+  "publish_at": "2026-11-08T13:00:00+05:30"
 }
 ```
 
-`media` is images (a carousel when there's more than one), one `.mp4` (a reel), or
-empty (a Facebook text post). `format: "story"` makes it a story. See
-`content/_example/`.
+- Many images = a carousel.
+- One `.mp4` = a reel.
+- `"format": "story"` = a story.
+- No media = a Facebook text post.
 
-## Safety
+## Good to know
 
-- Secrets stay in `.env` (git-ignored) and GitHub Actions secrets.
-- The phone app holds only your GitHub token encrypted with AES-256-GCM
-  (PBKDF2, 600k iterations). Without your password the published file is useless.
-- The desk never spends money, never DMs anyone first, and never posts a
-  piece without a compliance PASS.
+- Times in the workflows are UTC. `/setup` sets them to your time zone.
+- GitHub can run a cron job late. Need it on the dot? Call the workflow from an outside timer.
+- Public repos get free Actions time. Private repos have a limit. Check your plan.
+- Your keys stay in `.env` and GitHub secrets. They are never in the code.
+- The phone app only holds your GitHub key, locked with your password.
 
-## Want it set up for you?
+## Help
 
-AI Methods sets up and runs Content Desk for brands that want the result
-without the setup: [aimethods.co/contact](https://aimethods.co/contact).
+- Mail: [quickca@thequickca.com](mailto:quickca@thequickca.com)
+- Found a bug? [Open an issue](https://github.com/aimethods-co/content-desk/issues).
+- Want us to set it up for you? Mail us.
 
-## Licence
+## Credits
 
-MIT, see `LICENSE`. Third-party skills keep their own licences (MIT and
-Apache 2.0), listed in `third_party/`.
+- Made by [AI Methods](https://aimethods.co).
+- Some skills come from other open source repos. See [`third_party/`](third_party/).
+- License: MIT. See [`LICENSE`](LICENSE).

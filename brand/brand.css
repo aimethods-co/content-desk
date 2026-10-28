@@ -1,29 +1,29 @@
 /* Brand tokens for every HTML piece made in this repo (carousels, statics,
-   stories, reel compositions). The `setup` skill replaces these values with
-   your brand's. Keep the token names: templates and skills use them. */
+   stories, reel compositions). These are AI Methods' (aimethods.co); the
+   `setup` skill replaces them with your brand's. Keep the token names: templates and skills use them. */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=block");
 
 :root {
   /* Dark grounds */
   --b-night: #0A0A0A;           /* default dark ground */
   --b-night-raised: #151515;    /* cards on dark */
-  --b-deep: #14213D;            /* a coloured dark band: stats, closing slide */
+  --b-deep: #141414;            /* a raised dark band: stats, closing slide */
   --b-white: #FFFFFF;
   --b-white-body: rgba(255, 255, 255, 0.75);
   --b-white-muted: rgba(255, 255, 255, 0.58);
   --b-hair-dark: #323232;
 
   /* Light grounds */
-  --b-paper: #F4F1EA;           /* default light ground */
+  --b-paper: #F5F5F7;           /* default light ground */
   --b-surface: #FFFFFF;
   --b-ink: #0A0A0A;
   --b-ink-body: rgba(10, 10, 10, 0.76);
   --b-ink-muted: rgba(10, 10, 10, 0.6);
-  --b-hair-light: #E2DED4;
+  --b-hair-light: #E5E5E5;
 
   /* Accent: one per slide, for the one thing that matters */
-  --b-accent: #2F5BEA;          /* on light grounds */
-  --b-accent-on-dark: #8FA8FF;  /* on dark grounds */
+  --b-accent: #16A34A;          /* on light grounds */
+  --b-accent-on-dark: #22C55E;  /* on dark grounds */
 
   --b-font: "Inter", system-ui, sans-serif;
 }

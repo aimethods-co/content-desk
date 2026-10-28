@@ -1,0 +1,140 @@
+<!doctype html>
+<!-- 12s reel. window.render(t) is a pure function of t (seconds).
+     node scripts/frames.mjs content/2026-11-04-reel-plan-make-check-post/reel.html content/2026-11-04-reel-plan-make-check-post/work/frames -->
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../brand/brand.css">
+<style>
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body { background: var(--b-night); color: var(--b-white); }
+  .bg { position: absolute; inset: 0; background: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px) 0 0 / 32px 32px; }
+  .scene { position: absolute; inset: 0; padding: 0 96px; display: flex; flex-direction: column; justify-content: center; gap: 44px; opacity: 0; }
+  .kicker { font-size: 30px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--b-white-muted); }
+  .big { font-size: 230px; font-weight: 900; letter-spacing: -10px; line-height: .9; }
+  .h { font-size: 132px; font-weight: 900; letter-spacing: -5px; line-height: .96; }
+  .h span { color: var(--b-white-muted); }
+  .sub { font-size: 50px; line-height: 1.35; color: var(--b-white-body); font-weight: 500; }
+  .num { font-size: 40px; font-weight: 800; color: var(--b-accent-on-dark); letter-spacing: .1em; }
+  .slab { border-radius: 32px; padding: 44px 48px; font: 600 44px/1.6 ui-monospace, "SF Mono", Consolas, monospace;
+          background: linear-gradient(168deg, rgba(255,255,255,.07), rgba(255,255,255,.02)), #111;
+          box-shadow: inset 0 0 0 2px rgba(255,255,255,.09), 0 40px 80px rgba(0,0,0,.4); }
+  .row { display: flex; justify-content: space-between; }
+  .m { color: var(--b-white-muted); }
+  .ok { color: var(--b-accent-on-dark); }
+  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 16px; }
+  .day { border-radius: 24px; background: #141414; box-shadow: inset 0 0 0 2px rgba(255,255,255,.08); padding: 26px 0 30px; text-align: center; }
+  .day b { display: block; font-size: 30px; color: var(--b-white-muted); margin-bottom: 20px; }
+  .day i { display: block; width: 70px; height: 18px; border-radius: 9px; margin: 12px auto 0; background: rgba(255,255,255,.16); }
+  .day i.r { background: #fff; } .day i.s { background: var(--b-accent-on-dark); }
+  .cards { position: relative; height: 620px; }
+  .card { position: absolute; bottom: 0; border-radius: 30px; padding: 30px; font-size: 34px; font-weight: 700; color: var(--b-white-muted);
+          background: linear-gradient(168deg, rgba(255,255,255,.08), rgba(255,255,255,.02)), #121212; box-shadow: inset 0 0 0 2px rgba(255,255,255,.1), 0 30px 60px rgba(0,0,0,.45); }
+  .stamp { display: inline-block; font: 900 120px/1 var(--b-font); letter-spacing: -3px; color: var(--b-accent-on-dark); padding: 26px 50px; border-radius: 28px;
+           box-shadow: inset 0 0 0 8px var(--b-accent-on-dark); }
+  .cmd { display: inline-block; font: 700 64px/1 ui-monospace, "SF Mono", Consolas, monospace; padding: 34px 44px; border-radius: 26px; background: #fff; color: #0A0A0A; }
+  .cmd b { color: var(--b-accent); }
+  .logo { width: 150px; height: 150px; }
+  .wipe { position: absolute; left: 0; right: 0; top: 0; height: 0; background: #fff; }
+  .prog { position: absolute; left: 96px; right: 96px; top: 120px; display: flex; gap: 14px; }
+  .prog i { flex: 1; height: 8px; border-radius: 4px; background: rgba(255,255,255,.16); overflow: hidden; }
+  .prog i b { display: block; height: 100%; width: 0; background: #fff; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <section class="scene" id="s0">
+    <div class="kicker" id="k0">AI Methods</div>
+    <div class="h" id="h0"><div>Your</div><div>social media</div><div>team<span>.</span></div></div>
+    <div class="sub" id="u0">In one repo.</div>
+  </section>
+
+  <section class="scene" id="s1">
+    <div class="num">01</div>
+    <div class="big">Plan.</div>
+    <div class="week" id="week"></div>
+    <div class="sub">A whole week, every Sunday.</div>
+  </section>
+
+  <section class="scene" id="s2">
+    <div class="num">02</div>
+    <div class="big">Make.</div>
+    <div class="cards">
+      <div class="card" id="c0" style="left:0;width:270px;height:480px">Reel</div>
+      <div class="card" id="c1" style="left:310px;width:268px;height:420px">Carousel</div>
+      <div class="card" id="c2" style="left:618px;width:270px;height:480px">Story</div>
+    </div>
+  </section>
+
+  <section class="scene" id="s3">
+    <div class="num">03</div>
+    <div class="big">Check.</div>
+    <div><span class="stamp" id="stamp">PASS</span></div>
+    <div class="sub">Nothing posts without it.</div>
+  </section>
+
+  <section class="scene" id="s4">
+    <div class="num">04</div>
+    <div class="big">Post.</div>
+    <div class="slab">
+      <div class="row" id="q0"><span class="m">10:00</span><span>Story</span><span class="ok">✓</span></div>
+      <div class="row" id="q1"><span class="m">13:00</span><span>Carousel</span><span class="ok">✓</span></div>
+      <div class="row" id="q2"><span class="m">19:30</span><span>Reel</span><span class="ok">✓</span></div>
+    </div>
+    <div class="sub">On time. Checked from your phone.</div>
+  </section>
+
+  <section class="scene" id="s5">
+    <img class="logo" src="../../brand/logo/logo-transparent.png" alt="">
+    <div class="kicker" style="color:var(--b-accent-on-dark)">Content Desk</div>
+    <div class="h">Free.<br>Open source.<br><span>Yours.</span></div>
+    <div><span class="cmd"><b>&gt;</b> /setup</span></div>
+    <div class="sub">Link in bio.</div>
+  </section>
+
+  <div class="prog" id="prog"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+  <div class="wipe" id="wipe"></div>
+
+<script>
+window.DURATION = 12;
+const CUTS = [0, 2, 4, 6, 8, 10, 12];
+const $ = (id) => document.getElementById(id);
+$("week").innerHTML = "MTWTFSS".split("").map((d) => `<div class="day"><b>${d}</b><i class="r"></i><i></i><i class="s"></i></div>`).join("");
+const days = [...document.querySelectorAll(".day")];
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const out = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const back = (x) => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const rise = (el, p, d = 60) => { el.style.opacity = out(p); el.style.transform = `translateY(${(1 - out(p)) * d}px)`; };
+
+window.render = (t) => {
+  const i = CUTS.findIndex((c, k) => t >= c && t < CUTS[k + 1]);
+  const lt = t - CUTS[i];
+  document.querySelectorAll(".scene").forEach((s, k) => {
+    s.style.opacity = k === i ? 1 : 0;
+    s.style.transform = k === i ? `scale(${1 + lt * 0.012})` : "";
+  });
+  // a white wipe sweeps down across each cut (0.12s either side)
+  const near = CUTS.slice(1, -1).map((c) => t - c).find((d) => d > -0.12 && d < 0.12);
+  const w = $("wipe");
+  if (near === undefined) w.style.height = "0";
+  else if (near < 0) { w.style.top = "0"; w.style.height = `${out((near + 0.12) / 0.12) * 100}%`; }
+  else { w.style.top = `${out(near / 0.12) * 100}%`; w.style.height = `${(1 - out(near / 0.12)) * 100}%`; }
+  // progress bars for the four steps
+  document.querySelectorAll("#prog b").forEach((b, k) => { b.style.width = `${clamp((t - CUTS[k + 1]) / 2) * 100}%`; });
+  $("prog").style.opacity = i >= 1 && i <= 4 ? 1 : 0;
+
+  if (i === 0) {
+    rise($("k0"), lt / 0.3);
+    [...$("h0").children].forEach((l, k) => rise(l, (lt - 0.15 - k * 0.22) / 0.35, 90));
+    rise($("u0"), (lt - 1.0) / 0.35);
+  }
+  if (i === 1) days.forEach((d, k) => { const p = (lt - 0.2 - k * 0.1) / 0.3; d.style.opacity = clamp(p); d.style.transform = `scale(${0.6 + 0.4 * back(p)})`; });
+  if (i === 2) ["c0", "c1", "c2"].forEach((id, k) => { const p = (lt - 0.15 - k * 0.2) / 0.45; $(id).style.opacity = clamp(p * 1.5); $(id).style.transform = `translateY(${(1 - back(p)) * 500}px) rotate(${(1 - out(p)) * (k - 1) * 8}deg)`; });
+  if (i === 3) { const p = (lt - 0.35) / 0.3; const s = $("stamp"); s.style.opacity = clamp(p * 2); s.style.transform = `scale(${2.2 - 1.2 * back(p)}) rotate(${-6 + 6 * out(p)}deg)`; }
+  if (i === 4) ["q0", "q1", "q2"].forEach((id, k) => rise($(id), (lt - 0.2 - k * 0.3) / 0.3, 40));
+};
+window.render(11.5);
+</script>
+</body>
+</html>
